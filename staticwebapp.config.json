@@ -1,0 +1,33 @@
+{
+  "routes": [
+    {
+      "route": "/login",
+      "redirect": "/login.html",
+      "statusCode": 302
+    },
+    {
+      "route": "/login.html",
+      "allowedRoles": ["anonymous"]
+    },
+    {
+      "route": "/.auth/*",
+      "allowedRoles": ["anonymous"]
+    },
+    {
+      "route": "/*",
+      "allowedRoles": ["site_user"]
+    }
+  ],
+  "responseOverrides": {
+    "401": {
+      "statusCode": 302,
+      "redirect": "/login.html"
+    },
+    "403": {
+      "rewrite": "/login.html"
+    }
+  },
+  "globalHeaders": {
+    "Cache-Control": "no-store"
+  }
+}
