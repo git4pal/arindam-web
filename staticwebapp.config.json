@@ -1,33 +1,14 @@
 {
   "routes": [
     {
-      "route": "/login",
-      "redirect": "/login.html",
-      "statusCode": 302
-    },
-    {
-      "route": "/login.html",
-      "allowedRoles": ["anonymous"]
-    },
-    {
-      "route": "/.auth/*",
-      "allowedRoles": ["anonymous"]
-    },
-    {
       "route": "/*",
-      "allowedRoles": ["site_user"]
+      "allowedRoles": ["authenticated"]
     }
   ],
   "responseOverrides": {
     "401": {
-      "statusCode": 302,
-      "redirect": "/login.html"
-    },
-    "403": {
-      "rewrite": "/login.html"
+      "redirect": "/.auth/login/aad",
+      "statusCode": 302
     }
-  },
-  "globalHeaders": {
-    "Cache-Control": "no-store"
   }
 }
