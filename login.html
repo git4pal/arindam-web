@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Sign In | Nexus Retail</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        main {
+            width: min(400px, calc(100% - 4rem));
+            padding: 2rem;
+            box-sizing: border-box;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        p {
+            line-height: 1.6;
+        }
+        .sign-in {
+            display: block;
+            margin-top: 1rem;
+            padding: 12px 16px;
+            border-radius: 4px;
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .sign-in:hover {
+            background-color: #1a252f;
+        }
+        a {
+            color: #24597d;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Sign in to NEXUS</h1>
+        <p>This site is available to approved users only. Accept your invitation, then sign in with the account and provider used for that invitation.</p>
+        <a class="sign-in" href="/.auth/login/aad?post_login_redirect_uri=%2F">Continue with Microsoft</a>
+        <a class="sign-in" href="/.auth/login/github?post_login_redirect_uri=%2F">Continue with GitHub</a>
+        <p>If you signed in but cannot access the site, ask the site administrator for access. Signing in alone does not grant permission.</p>
+        <p><a href="/.auth/logout?post_logout_redirect_uri=%2Flogin.html">Sign out to switch accounts</a></p>
+    </main>
+</body>
+</html>
